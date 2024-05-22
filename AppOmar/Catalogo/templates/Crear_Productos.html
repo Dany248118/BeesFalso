@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block Contenido %}
+<h1>Crear un nuevo producto</h1>
+
+<form method="POST" class="formulario" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit" class="boton"> Guardar </button>
+    <a href="{% url 'productos' %}" type="submit"> Canccelar </a>  
+</form>
+{% endblock Contenido %}

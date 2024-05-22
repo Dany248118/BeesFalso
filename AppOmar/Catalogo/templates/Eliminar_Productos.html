@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block Contenido %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <h2> ¿Estas seguro(a) de eliminar el producto {{producto.nombre}}?</h2>
+    <button type="submit"> Eliminar </button>
+    <a href="{% url 'productos' %}" > Cancelar </a>
+</form>
+{% endblock Contenido %}

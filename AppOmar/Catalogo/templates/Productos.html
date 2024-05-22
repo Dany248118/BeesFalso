@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block estilo1 %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}"/>
+{% endblock estilo1 %}
+
+
+{% block Contenido %}
+<h1> Todos los Productos </h1>
+<a href="{% url 'crearProductos' %}" class="create-product-btn">Crear Nuevo Producto &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></a>
+
+{% if productos %}
+    <div class="product-container">
+        {% for producto in productos %}
+            <div class="product-card">
+                {% if producto.imagen.url %}
+                    <img src="{{ settings.MEDIA_URL }}{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="200" height="200" >
+                {% else %}
+                    <img src="#" alt="Image Not Available">
+                {% endif %}
+                <h2>{{ producto.categoria }} {{ producto.marca }}</h2>
+                <p>Precio: {{ producto.precio }} <sup>MXN</sup></p>
+                <p>Existencias: {{ producto.existencias }}</p>
+
+                <a href="#" class="edit-product-btn"> Editar </a>
+                <a href="{% url 'eliminarProducto' pk=producto.id %}" class="delete-product-btn">Eliminar</a>
+           </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <h1>NO HAY PRODUCTOS REGISTRADOS</h1>
+{% endif %}
+
+
+
+{% endblock Contenido %}

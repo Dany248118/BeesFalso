@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    background-color: #13072e;
+    justify-content: right;
+    align-items: right;
+    color: #FFF;
+} 
+
+/*Menu*/
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu ul button{
+    background-color: #FFF;
+    font-size: large;
+    color: #000;
+    width: 180px;
+    height: 50px;
+    border-radius: 20px;
+    font-family: 'Courier New';
+    transition-duration: 0.4s;
+}
+
+.menu ul button:hover{
+    background-color: #3f2182;
+    color: #FFF;
+}
+
+.menu ul li{
+    list-style: none;
+    display: flex;
+    align-items: center; 
+    padding: 10px 15px;
+}
+
+.menu ul li img{
+    margin-right: 10px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    font-family: 'Courier New';
+}
+
+.menu ul li a:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1cd8d2;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.5s;
+}
+
+.menu ul li a:before{
+    color: #1cd8d2;
+}
+
+ul .promociones a:hover:after{
+    transform: scaleX(1.15);
+}
+
+ul .productos a:hover:after,
+ul .usuario a:hover:after,
+ul .carrito a:hover:after{
+    transform: scaleX(1.27);
+}
+
+/*Swiper*/
+
+.swiper {
+    margin-top: 20px;
+    width: 1000px;
+    height: 300px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Botones Categorias*/
+
+.Productos {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+  
+.Productos button{
+    margin: 50px 10px;
+    background-color: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 15%;
+}
+
+.Productos button img{
+    width: 200px;
+    height: 100px;
+}
+
+/* footer */
+
+footer{
+    position:static;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+footer ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    width: 100%;
+}
+
+.socials{
+    gap: 20px;
+}
+
+.socials a{
+    font-size: 24px;
+}
+
+.links{
+    gap: 10px;
+}
+
+.links a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Courier New';
+}
+
+.legal{
+    font-size: 12px;
+    margin: 0;
+}
+
+@media (width > 420px){
+    section{
+        align-items: center;
+        padding-left: 0;
+        gap: 20px;
+    }
+
+    .links{
+        gap: 20px;
+    }
+}

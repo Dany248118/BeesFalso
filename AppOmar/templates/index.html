@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bees Falso</title>   
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    {% block estilo1 %}
+    
+    {% endblock estilo1 %}
+
+</head>
+<body>
+    
+    <!--Menu-->
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'main' %}"> Home</a></li>
+            <li class="productos"><i class="fa-solid fa-shop"></i><a href="{% url 'productos' %}"> Productos</a></li>
+            <li class="promociones"><i class="fa-solid fa-tag"></i><a href="#"> Promociones</a></li>
+            <li class="carrito"><i class="fa-solid fa-cart-shopping"></i><a href="#"> Carrito</a></li>
+            <li class="usuario"><i class="fa-regular fa-user"></i><a href="#"> Perfil</a></li>
+
+            <button onclick="window.location.href='{% url 'iniciar' %}'">Registrarse &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></button>
+        </ul>
+    </div> belmar
+
+    {% block Contenido %}
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'img/corona.jpeg' %}" alt="corona"></div>
+            <div class="swiper-slide"><img src="{% static 'img/stella.jpg' %}" alt="stella"></div>
+            <div class="swiper-slide"><img src="{% static 'img/victoria.jpg' %}" alt="victoria"></div>
+            <div class="swiper-slide"><img src="{% static 'img/vicky Lata.jpg' %}" alt="vicky Lata"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!--Botones-->
+    <div class="Productos">
+        <button><img src="{% static 'img/modelo-logo.png' %}" alt=""></button>
+        <button><img src="{% static 'img/michelob-logo.png' %}" alt=""></button>
+        <button><img src="{% static 'img/pacifico-logo.png' %}" alt=""></button>
+        <button><img src="{% static 'img/stella-logo.png' %}" alt=""></button>
+    </div>
+
+    {% endblock Contenido %}
+    <footer>
+        <section>
+            <ul class="socials">
+                <li><a class="fa-brands fa-twitter"></a></li>
+                <li><a class="fa-brands fa-facebook"></a></li>
+                <li><a class="fa-brands fa-instagram"></a></li>
+            </ul>
+            <ul class="links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Inicio</a></li>
+            </ul>
+            <p class="legal">&copy 2024 all rights deserved</p>
+        </section>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            keyboard: {
+                enabled: true,
+            },
+        });
+    </script>
+</body>
+</html>
