@@ -1,0 +1,16 @@
+.create-sale-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.create-sale-btn:hover {
+    background-color: #3f2182;
+    color: #fff;
+}

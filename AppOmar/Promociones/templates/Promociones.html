@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block estilo1 %}
+<link rel="stylesheet" href="{% static 'css/promociones.css' %}"/>
+{% endblock estilo1 %}
+
+{% block Contenido %}
+    <h1> Todas las Promociones </h1>
+    <a href="#" class="create-sale-btn">Crear Nueva Promocion &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></a>
+
+{% endblock Contenido %}

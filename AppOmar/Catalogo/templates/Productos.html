@@ -23,7 +23,7 @@
                 <p>Precio: {{ producto.precio }} <sup>MXN</sup></p>
                 <p>Existencias: {{ producto.existencias }}</p>
 
-                <a href="#" class="edit-product-btn"> Editar </a>
+                <a href="{% url 'editarProducto' pk=producto.id %}" class="edit-product-btn"> Editar </a>
                 <a href="{% url 'eliminarProducto' pk=producto.id %}" class="delete-product-btn">Eliminar</a>
            </div>
         {% endfor %}

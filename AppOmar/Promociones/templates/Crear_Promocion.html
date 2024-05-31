@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block estilo1 %}
+<link rel="stylesheet" href="{% static 'css/promociones.css' %}"/>
+{% endblock estilo1 %}
+
+{% block Contenido %}
+    <h1> Crear Nueva Promocion </h1>
+
+    <form method="POST" class="formulario" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        {{form.as_p}}
+        
+        <button type="submit" class="boton"> Guardar </button>
+        <a href="{% url 'promociones' %}" type="submit"> Cancelar </a>  
+    </form>
+
+{% endblock Contenido %}

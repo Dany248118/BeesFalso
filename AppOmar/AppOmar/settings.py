@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'login',
     'Catalogo',
+    'Promociones',
 ]
 
 MIDDLEWARE = [
