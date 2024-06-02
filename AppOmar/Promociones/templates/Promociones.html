@@ -7,6 +7,28 @@
 
 {% block Contenido %}
     <h1> Todas las Promociones </h1>
-    <a href="#" class="create-sale-btn">Crear Nueva Promocion &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></a>
+    <a href="{%url 'crearPromociones' %}" class="create-sale-btn">Crear Nueva Promocion &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></a>
+
+    {% if promociones %}
+    <div class="product-container">
+        {% for promos in promociones %}
+            <div class="product-card">
+                {% if promo.imagen.url %}
+                    <img src="{{ settings.MEDIA_URL }}{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="200" height="200" >
+                {% else %}
+                    <img src="#" alt="Image Not Available">
+                {% endif %}
+                <h2>{{ promo.categoria }} {{ promo.marca }}</h2>
+                <p>Precio: {{ promo.precio }} <sup>MXN</sup></p>
+                <p>Existencias: {{ promo.existencias }}</p>
+
+                <a href="{% url 'editarProducto' pk=producto.id %}" class="edit-product-btn"> Editar </a>
+                <a href="{% url 'eliminarProducto' pk=producto.id %}" class="delete-product-btn">Eliminar</a>
+           </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <h1>NO HAY PROMOCIONES REGISTRADAS</h1>
+{% endif %}
 
 {% endblock Contenido %}

@@ -9,6 +9,8 @@ class CrearPromociones(CreateView):
     model = Promociones
     template_name = 'Crear_Promocion.html'
     context_object_name = 'promociones'
+    form_class = PromoForm
+    success_url = reverse_lazy('promociones')
 
 def home(request):
     return render(request, 'Promociones.html')
