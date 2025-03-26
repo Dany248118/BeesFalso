@@ -8,3 +8,7 @@ class Promociones(models.Model):
     precio = models.DecimalField(max_digits=5, decimal_places=2)
     fecha_inicio = models.DateField(auto_now=False, auto_now_add=False)
     fecha_fin = models.DateField(auto_now=False, auto_now_add=False)
+
+    class Meta:
+        verbose_name = 'Promociones'
+        verbose_name_plural = 'Promociones'

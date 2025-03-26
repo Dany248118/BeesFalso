@@ -24,9 +24,12 @@
             <li class="productos"><i class="fa-solid fa-shop"></i><a href="{% url 'productos' %}"> Productos</a></li>
             <li class="promociones"><i class="fa-solid fa-tag"></i><a href="{% url 'promociones' %}"> Promociones</a></li>
             <li class="carrito"><i class="fa-solid fa-cart-shopping"></i><a href="#"> Carrito</a></li>
-            <li class="usuario"><i class="fa-regular fa-user"></i><a href="#"> Perfil</a></li>
-
+            {% if user.is_authenticated %}
+            <li class="usuario"><i class="fa-regular fa-user"></i><a href="#"> Hola {{user}}</a></li>
+            <button onclick="window.location.href='{% url 'logout' %}'">Cerrar Sesion &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></button>
+            {%else %}
             <button onclick="window.location.href='{% url 'iniciar' %}'">Registrarse &ensp;<i class="fa-solid fa-arrow-right fa-xl"></i></button>
+            {% endif %}
         </ul>
     </div> 
 
